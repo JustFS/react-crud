@@ -3,17 +3,17 @@ import firebase from "../utils/firebaseConfig";
 import Form from "./Form";
 import TodoList from "./TodoList";
 
-const IsSignIn = () => {
+const Main = () => {
   return (
-    <span>
+    <main>
       <div>Signed In!</div>
       <button onClick={() => firebase.auth().signOut()}>Sign out!</button>
       <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
 
       <Form />
       <TodoList />
-    </span>
+    </main>
   );
 };
 
-export default IsSignIn;
+export default Main;

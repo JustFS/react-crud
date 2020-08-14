@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import IsSignIn from './components/IsSignIn';
+import Main from './components/Main';
 
 import firebase from './utils/firebaseConfig';
 
@@ -24,7 +24,7 @@ class App extends Component {
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged(user => {
       this.setState({ isSignedIn: !!user })
-      console.log("user", user)
+      // console.log("user", user)
     })
   }
 
@@ -34,7 +34,7 @@ class App extends Component {
         <h1>React Crud</h1>
 
         {this.state.isSignedIn ? (
-          <IsSignIn />
+          <Main />
         ) : (
           <StyledFirebaseAuth
             uiConfig={this.uiConfig}
