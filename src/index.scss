@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Josefin+Slab&display=swap");
+
+$color-1: #e75874;
+$color-2: #be1558;
+$color-3: #fbcbc9;
+$color-4: #322514;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  list-style-type: none;
+}
+button {
+  background: none;
+  background: $color-3;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 2px;
+  transition: .2s;
+  cursor: pointer;
+  border: 1px solid $color-4;
+  font-family: "Josefin Sans", sans-serif;
+
+  &:hover {
+    filter: brightness(120%);
+  }
+}
+body {
+  font-family: "Josefin Sans", sans-serif;
+  max-width: 1050px;
+  margin: 0 auto;
+  background: $color-4;
+  color: rgb(241, 241, 241);
+
+  .login-page {
+    margin: 0 auto;
+    text-align: center;
+
+    h1 {
+      margin-bottom: 40px;
+    }
+  }
+  main {
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 50px;
+      padding: 1rem;
+      background: $color-3;
+      box-shadow: 2px 0 4px rgba(51, 51, 51, 0.479);
+      color: #222;
+
+      div {
+        cursor: pointer;
+        padding: 0.8rem 1rem;
+        background: $color-1;
+        transition: .2s;
+        border: 1px solid $color-2;
+      
+        &:hover {
+          filter: brightness(120%);
+        }
+      }
+    }
+    .create {
+      margin: 1rem;
+      padding: 1rem;
+      background: $color-1;
+      width: 600px;
+      font-size: 1rem;
+
+      h4 {
+        font-weight: 200;
+      }
+
+      .form {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        input {
+          padding: 0.8rem;
+          width: 170px;
+        }
+        textarea {
+          min-width: 320px;
+          line-height: 20px;
+        }
+
+        textarea,
+        input {
+          resize: none;
+          font-family: "Josefin Slab", serif;
+          border: 1px solid $color-2;
+          padding: 0.8rem;
+          height: 50px;
+          font-size: 1.2rem;
+
+          &::placeholder {
+            font-family: "Josefin Slab", serif;
+            line-height: 25px;
+          }
+        }
+      }
+    }
+    .read {
+      
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        align-items: center;
+
+        li {
+          background: $color-2;
+          min-width: 280px;
+          max-width: 330px;
+          padding: 2rem 2rem 1rem;
+          margin: 10px 10px;
+          position: relative;
+          text-align: center;
+          height: 100%;
+          display: grid;
+          align-items: center;
+
+          p {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-family: "Josefin Slab", serif;
+            font-weight: 500;
+          }
+          h6 {
+            font-size: 0.8rem;
+            font-style: italic;
+            font-weight: 100;
+          }
+          .buttons-container {
+            margin-top: 1rem;
+            text-align: right;
+
+            button {
+              font-size: 0.7rem;
+              margin-left: 10px;
+              padding: 5px;
+            }
+          }
+        }
+      }
+      .item-container-update {
+        textarea {
+          resize: none;
+          height: 90px;
+          width: 100%;
+        }
+        input {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

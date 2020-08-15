@@ -24,6 +24,7 @@ const App = () => {
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       setIsSignedIn(!!user);
+      console.log(user);
       setUid(user.uid);
     });
   }, []);
@@ -31,15 +32,16 @@ const App = () => {
   return (
     <UidContext.Provider value={uid}>
       <div className="App">
-        <h1>React Crud</h1>
-
         {isSignedIn ? (
           <Main />
         ) : (
-          <StyledFirebaseAuth
-            uiConfig={uiConfig}
-            firebaseAuth={firebase.auth()}
-          />
+          <div className="login-page">
+            <h1>React Crud</h1>
+            <StyledFirebaseAuth
+              uiConfig={uiConfig}
+              firebaseAuth={firebase.auth()}
+            />
+          </div>
         )}
       </div>
     </UidContext.Provider>
