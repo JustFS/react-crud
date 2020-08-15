@@ -5,6 +5,7 @@
   "dependencies": {
     "cra-template": "1.0.3",
     "firebase": "^7.17.1",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-firebaseui": "^4.1.0",

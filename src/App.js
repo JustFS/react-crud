@@ -1,49 +1,49 @@
-import React, { Component } from 'react';
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import Main from './components/Main';
+import React, { useState, useEffect } from "react";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import firebase from "./utils/firebaseConfig";
+import Main from "./components/Main";
+import { UidContext } from "./components/UidContext";
 
-import firebase from './utils/firebaseConfig';
+const App = () => {
+  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [uid, setUid] = useState(null);
 
-class App extends Component {
-  state = {
-    isSignedIn: false
-  }
-  uiConfig = {
+  const uiConfig = {
     signInFlow: "popup",
     signInOptions: [
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       firebase.auth.FacebookAuthProvider.PROVIDER_ID,
       firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-      firebase.auth.EmailAuthProvider.PROVIDER_ID
+      firebase.auth.EmailAuthProvider.PROVIDER_ID,
     ],
     callbacks: {
-      signInSuccess: () => false
-    }
-  }
+      signInSuccess: () => false,
+    },
+  };
 
-  componentDidMount = () => {
-    firebase.auth().onAuthStateChanged(user => {
-      this.setState({ isSignedIn: !!user })
-      // console.log("user", user)
-    })
-  }
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      setIsSignedIn(!!user);
+      setUid(user.uid);
+    });
+  }, []);
 
-  render() {
-    return (
+  return (
+    <UidContext.Provider value={uid}>
       <div className="App">
         <h1>React Crud</h1>
 
-        {this.state.isSignedIn ? (
+        {isSignedIn ? (
           <Main />
         ) : (
           <StyledFirebaseAuth
-            uiConfig={this.uiConfig}
+            uiConfig={uiConfig}
             firebaseAuth={firebase.auth()}
           />
         )}
       </div>
-    )
-  }
-}
+    </UidContext.Provider>
+  );
+};
 
 export default App;
