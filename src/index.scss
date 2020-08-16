@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Josefin+Slab&display=swap");
 
-$color-1: #e75874;
+$color-1: #eee;
 $color-2: #be1558;
 $color-3: #fbcbc9;
-$color-4: #322514;
+$color-4: #333;
 
 * {
   margin: 0;
@@ -18,7 +18,7 @@ button {
   border: none;
   padding: 0.5rem;
   border-radius: 2px;
-  transition: .2s;
+  transition: 0.2s;
   cursor: pointer;
   border: 1px solid $color-4;
   font-family: "Josefin Sans", sans-serif;
@@ -39,7 +39,7 @@ body {
     text-align: center;
 
     h1 {
-      margin-bottom: 40px;
+      margin: 40px 0;
     }
   }
   main {
@@ -57,16 +57,16 @@ body {
         cursor: pointer;
         padding: 0.8rem 1rem;
         background: $color-1;
-        transition: .2s;
+        transition: 0.2s;
         border: 1px solid $color-2;
-      
+
         &:hover {
           filter: brightness(120%);
         }
       }
     }
     .create {
-      margin: 1rem;
+      margin: 1rem 0;
       padding: 1rem;
       background: $color-1;
       width: 600px;
@@ -108,7 +108,6 @@ body {
       }
     }
     .read {
-      
       ul {
         display: flex;
         flex-wrap: wrap;

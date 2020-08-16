@@ -1,0 +1,19 @@
+{
+  "quotesDB" : {
+    "-MEmjOLZj0hmKmehFxrb" : {
+      "author" : "Griffo",
+      "text" : "L’informatique n’est qu’un outil, comme un pinceau ou un crayon.",
+      "uid" : "6PFRSp2vwzPKqPl16sYKeEEPvzP2"
+    },
+    "-MEmjYjnEVWMCOPunsvu" : {
+      "author" : "Mireille Sitbon",
+      "text" : "L'informatique, ça fait gagner beaucoup de temps... à condition d'en avoir beaucoup devant soi !",
+      "uid" : "6PFRSp2vwzPKqPl16sYKeEEPvzP2"
+    },
+    "-MEmjyhyRKr0TTwVZyD1" : {
+      "author" : "Alain Rémond",
+      "text" : "L'informatique est géniale : les e-mails, même si vous n'y répondez pas, ça ne prend pas de place.",
+      "uid" : "6PFRSp2vwzPKqPl16sYKeEEPvzP2"
+    }
+  }
+}

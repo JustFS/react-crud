@@ -5,15 +5,13 @@ import UpdateDelete from "./UpdateDelete";
 const Read = () => {
   const [quoteList, setQuoteList] = useState([]);
 
-  // remplace component didupdate
   useEffect(() => {
     const quotesDB = firebase.database().ref("quotesDB");
 
-    // snapshot callback function
     quotesDB.on("value", (snapshot) => {
-      // console.log(snapshot.val());
-      let list = [];
+      console.log(snapshot.val());
       let previousList = snapshot.val();
+      let list = [];
       for (let id in previousList) {
         list.push({ id, ...previousList[id] });
       }
@@ -24,12 +22,10 @@ const Read = () => {
   return (
     <div className="read">
       <ul>
-        {quoteList
-          ? quoteList.map((item, index) => (
-              <UpdateDelete item={item} key={index} />
-            ))
-          : ""
-        }
+        {quoteList &&
+          quoteList.map((item, index) => (
+            <UpdateDelete item={item} key={index} />
+          ))}
       </ul>
     </div>
   );

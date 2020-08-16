@@ -8,7 +8,7 @@ const Create = () => {
 
   const uid = useContext(UidContext);
 
-  const create = () => {
+  const createQuote = () => {
     const quotesDB = firebase.database().ref("quotesDB");
     const quote = {
       uid,
@@ -28,17 +28,17 @@ const Create = () => {
       <div className="form">
         <input
           type="text"
-          onChange={(e) => setAuthor(e.target.value)}
           placeholder="Auteur"
           value={author}
+          onChange={(e) => setAuthor(e.target.value)}
         />
         <textarea
           type="text"
-          onChange={(e) => setText(e.target.value)}
           placeholder="Citation"
           value={text}
+          onChange={(e) => setText(e.target.value)}
         />
-        <button onClick={create}>Create</button>
+        <button onClick={createQuote}>Create</button>
       </div>
     </div>
   );
